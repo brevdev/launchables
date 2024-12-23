@@ -9,6 +9,8 @@
   <a href="https://discord.gg/NVDyv7TUgJ" style="color: #06b6d4;">Discord</a>
 </p>
 
+[![Static Badge](https://img.shields.io/badge/Open_In-AI_Workbench-76B900)](https://ngc.nvidia.com/open-ai-workbench/aHR0cHM6Ly9naXRodWIuY29tL2p0Y2FzYWJsYW5jYS9icmV2LW5vdGVib29rcy1haXdi)
+
 # Brev.dev Notebooks
 
 This repo contains helpful AI/ML notebook templates for LLMs, multi-modal models, image segmentation, and more. Each notebook has been coupled with the minimum GPU specs required to use them along with a 1-click deploy badge that starts each notebook on a GPU.
