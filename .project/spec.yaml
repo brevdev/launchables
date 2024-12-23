@@ -1,0 +1,111 @@
+specVersion: v2
+specMinorVersion: 2
+meta:
+  name: brev-notebooks-aiwb
+  image: project-brev-notebooks-aiwb
+  description: ""
+  labels: []
+  createdOn: "2024-12-22T14:25:03Z"
+  defaultBranch: main
+layout:
+  - path: code/
+    type: code
+    storage: git
+  - path: models/
+    type: models
+    storage: gitlfs
+  - path: data/
+    type: data
+    storage: gitlfs
+  - path: data/scratch/
+    type: data
+    storage: gitignore
+environment:
+  base:
+    registry: nvcr.io
+    image: vjrv0zpbsw9c/internal/pytorch:1.0.6
+    build_timestamp: "20241211222812"
+    name: PyTorch
+    supported_architectures: []
+    cuda_version: 12.6.3
+    description: A Pytorch 2.6 Base with CUDA 12.6.3
+    entrypoint_script: ""
+    labels:
+      - cuda12.6.3
+      - pytorch2.6
+    apps:
+      - name: jupyterlab
+        type: jupyterlab
+        class: webapp
+        start_command: jupyter lab --allow-root --port 8888 --ip 0.0.0.0 --no-browser --NotebookApp.base_url=\$PROXY_PREFIX --NotebookApp.default_url=/lab --NotebookApp.allow_origin='*'
+        health_check_command: '[ \$(echo url=\$(jupyter lab list | head -n 2 | tail -n 1 | cut -f1 -d'' '' | grep -v ''Currently'' | sed "s@/?@/lab?@g") | curl -o /dev/null -s -w ''%{http_code}'' --config -) == ''200'' ]'
+        stop_command: jupyter lab stop 8888
+        user_msg: ""
+        logfile_path: ""
+        timeout_seconds: 60
+        icon_url: ""
+        webapp_options:
+          autolaunch: true
+          port: "8888"
+          proxy:
+            trim_prefix: false
+          url_command: jupyter lab list | head -n 2 | tail -n 1 | cut -f1 -d' ' | grep -v 'Currently'
+      - name: tensorboard
+        type: tensorboard
+        class: webapp
+        start_command: tensorboard --logdir \$TENSORBOARD_LOGS_DIRECTORY --path_prefix=\$PROXY_PREFIX --bind_all
+        health_check_command: '[ \$(curl -o /dev/null -s -w ''%{http_code}'' http://localhost:\$TENSORBOARD_PORT\$PROXY_PREFIX/) == ''200'' ]'
+        stop_command: pkill tensorboard
+        user_msg: ""
+        logfile_path: ""
+        timeout_seconds: 60
+        icon_url: ""
+        webapp_options:
+          autolaunch: true
+          port: "6006"
+          proxy:
+            trim_prefix: false
+          url: http://localhost:6006
+    programming_languages:
+      - python3
+    icon_url: https://workbench.download.nvidia.com/static/img/ai-workbench-icon-rectangle.jpg
+    image_version: 1.0.6
+    os: linux
+    os_distro: ubuntu
+    os_distro_release: "24.04"
+    schema_version: v2
+    user_info:
+      uid: ""
+      gid: ""
+      username: ""
+    package_managers:
+      - name: apt
+        binary_path: /usr/bin/apt
+        installed_packages:
+          - curl
+          - git
+          - git-lfs
+          - vim
+      - name: pip
+        binary_path: /usr/local/bin/pip
+        installed_packages:
+          - jupyterlab==4.2.4
+    package_manager_environment:
+      name: ""
+      target: ""
+execution:
+  apps: []
+  resources:
+    gpu:
+      requested: 1
+    sharedMemoryMB: 1024
+  secrets: []
+  mounts:
+    - type: project
+      target: /project/
+      description: Project directory
+      options: rw
+    - type: volume
+      target: /data/tensorboard/logs/
+      description: Tensorboard Log Files
+      options: volumeName=tensorboard-logs-volume
