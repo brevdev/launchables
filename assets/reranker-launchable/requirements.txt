@@ -6,4 +6,4 @@ langchain-core==0.1.29
 langchain-nvidia-ai-endpoints==0.1.4
 numpy==1.26.4
 sentence-transformers==2.2.2
-unstructured==0.11.8
+unstructured==0.14.3
