@@ -4,7 +4,7 @@
 <!-- Links -->
 <p align="center">
   <a href="https://brev.nvidia.com" style="color: #06b6d4;">Console</a> •
-  <a href="https://brev.dev" style="color: #06b6d4;">Docs</a> •
+  <a href="https://developer.nvidia.com/brev" style="color: #06b6d4;">Docs</a> •
   <a href="/" style="color: #06b6d4;">Templates</a> •
 </p>
 
