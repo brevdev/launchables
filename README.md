@@ -5,7 +5,8 @@
 <p align="center">
   <a href="https://brev.nvidia.com" style="color: #06b6d4;">Console</a> •
   <a href="https://docs.nvidia.com/brev" style="color: #06b6d4;">Docs</a> •
-  <a href="https://github.com/brevdev/launchables" style="color: #06b6d4;">Launchables</a>
+  <a href="https://github.com/brevdev/launchables" style="color: #06b6d4;">Launchables</a> •
+  <a href="https://github.com/brevdev/launchables/blob/main/LAUNCHABLE-CREATION-GUIDE.md" style="color: #06b6d4;">Launchables Guide</a>
 </p>
 
 # Brev Launchables
