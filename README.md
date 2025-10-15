@@ -82,16 +82,12 @@ NVIDIA Brev provides streamlined access to NVIDIA GPU instances on popular cloud
 
 #### Provision:
 
-Brev provisions a GPU for you. You don't have to worry about setting up a cloud account. We have solid GPU supply, but if you do have AWS or GCP, you can link them.
+Brev provisions a GPU for you. You don't have to worry about setting up a cloud account. We have solid GPU supply.
 
 #### Configure:
 
-Brev configures your GPU with the right drivers and libraries. Use our open source tool Verb to point and click the right python and CUDA versions.
+Brev configures your GPU with the right drivers and libraries. There are also advanced otpions for running docker containers or using docker compose.
 
 #### Connect:
 
-Brev CLI automatically edits your ssh config so you can `ssh gpu-name` or run `brev open gpu-name` to open VS Code to the remote machine
-
-#### Launchables
-
-Launchables are a feature of NVIDIA Brev that deliver preconfigured, fully optimized compute and software environments. Fast and easy to deploy, launchables allow you to start projects without extensive setup or configuration.
+Brev CLI automatically edits your ssh config so you can `ssh gpu-name` or run `brev open gpu-name` to open VS Code, Cursor or your favorite editor to the remote machine
