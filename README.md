@@ -4,13 +4,15 @@
 <!-- Links -->
 <p align="center">
   <a href="https://brev.nvidia.com" style="color: #06b6d4;">Console</a> •
-  <a href="https://developer.nvidia.com/brev" style="color: #06b6d4;">Docs</a> •
-  <a href="/" style="color: #06b6d4;">Templates</a> •
+  <a href="https://docs.nvidia.com/brev" style="color: #06b6d4;">Docs</a> •
+  <a href="https://github.com/brevdev/launchables" style="color: #06b6d4;">Launchables</a>
 </p>
 
-# Brev.dev Notebooks
+# Brev Launchables
 
-This repo contains helpful AI/ML notebook templates for LLMs, multi-modal models, image segmentation, and more. Each notebook has been coupled with the minimum GPU specs required to use them along with a 1-click deploy badge that starts each notebook on a GPU.
+Launchables are a feature of NVIDIA Brev that deliver preconfigured, fully optimized compute and software environments. Fast and easy to deploy, launchables allow you to start projects without extensive setup or configuration.
+
+This repo contains helpful AI/ML notebooks for LLMs, multi-modal models, image segmentation, and more. Each notebook has been coupled with the minimum GPU specs required to use them along with a 1-click deploy badge that starts each notebook on a GPU.
 
 ## Contributing
 
@@ -74,9 +76,9 @@ We've split the notebooks into categories based on the type of task they're desi
 
 ---
 
-### What is Brev.dev?
+### What is Brev?
 
-Brev is a dev tool that makes it really easy to code on a GPU in the cloud. Brev does 3 things: provision, configure, and connect.
+NVIDIA Brev provides streamlined access to NVIDIA GPU instances on popular cloud platforms, automatic environment setup, and flexible deployment options, enabling developers to start experimenting instantly.
 
 #### Provision:
 
@@ -88,4 +90,8 @@ Brev configures your GPU with the right drivers and libraries. Use our open sour
 
 #### Connect:
 
-Brev.dev CLI automatically edits your ssh config so you can `ssh gpu-name` or run `brev open gpu-name` to open VS Code to the remote machine
+Brev CLI automatically edits your ssh config so you can `ssh gpu-name` or run `brev open gpu-name` to open VS Code to the remote machine
+
+#### Launchables
+
+Launchables are a feature of NVIDIA Brev that deliver preconfigured, fully optimized compute and software environments. Fast and easy to deploy, launchables allow you to start projects without extensive setup or configuration.
