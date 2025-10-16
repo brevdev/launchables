@@ -44,16 +44,21 @@ If you have any technical questions or run into issues, please reach out to [Bre
 ## Getting Started
 
 1. Create an account on [brev.nvidia.com](https://brev.nvidia.com)
-2. On the top navigation bar, click **Launchables**
-3. Click **Create Launchable**
+2. On the top navigation bar, click **Launchables**. Click **Create Launchable**
+
+![Create Launchable](assets/launchable-creation-guide/images/image13.png)
 
 ## File Configuration
 
 Next, you will be asked to provide code files to share in the Launchable. Launchables are ideally meant for sharing a code repo or Jupyter notebook guide on top of a GPU environment. You can still create Launchables without code files, or if you have a container that has files inside of it.
 
+![File Configuration Options](assets/launchable-creation-guide/images/image9.png)
+
 ### Option 1: I have code files in a git repository
 
 Enter a GitHub URL. In this example, a notebook is being inputted. You can input entire repos as well.
+
+![GitHub URL Input](assets/launchable-creation-guide/images/image11.png)
 
 ### Option 2: My code files are embedded in my container
 
@@ -78,6 +83,8 @@ Provides a GPU VM in the cloud, with Docker, Python, and CUDA preinstalled. Ubun
 
 If you require container(s) running for the code sample, you can also specify a Docker Image / Docker Compose YAML.
 
+![Container Configuration](assets/launchable-creation-guide/images/image15.png)
+
 This adds significant time to the provisioning process, since it takes time to build images/containers. Expect anywhere between 5-15 minutes of additional time.
 
 #### Option 1: Featured Containers
@@ -95,6 +102,8 @@ If you have your own Docker image(s) on a public registry, you can manually add 
 ## JupyterLab/Tunnels Configuration
 
 Choose whether you want [JupyterLab](https://jupyter.org) on your instance. This depends on if you want your users to go through a Jupyter Notebook/IDE for interacting with the Launchable (HIGHLY RECOMMENDED). Declining means a user will need to SSH into the GPU.
+
+![JupyterLab Configuration](assets/launchable-creation-guide/images/image5.png)
 
 You can also configure whether you want to pre-expose any tunnels or services or set firewall rules on the VM when it is provisioned. This is helpful for any networking necessary for the Launchable workload and your Launchable's users won't need to mess with any networking.
 
@@ -116,9 +125,13 @@ Examples of use cases for tunnels include:
 
 More NVIDIA Cloud Partner providers are being added every quarter.
 
+![GPU Selection](assets/launchable-creation-guide/images/image7.png)
+
 Select a configuration by clicking on a specific configuration.
 
 **Note:** Instance Attributes share more about the specific characteristics of a selected instance!
+
+![Instance Attributes](assets/launchable-creation-guide/images/image12.png)
 
 Select **Next** once you are satisfied with the configuration.
 
@@ -126,24 +139,42 @@ Select **Next** once you are satisfied with the configuration.
 
 Enter a descriptive name for the Launchable and click **Generate Launchable**.
 
+![Name Your Launchable](assets/launchable-creation-guide/images/image1.png)
+
 You can click **Preview Deploy Page** to view what it would look like when people visit your Launchable's URL.
 
 If you feel confident, go ahead and **Create Launchable**! Congratulations!
 
 The following screen is displayed when a launchable is successfully created. You can copy the URL and start sharing it with others!
 
+![Launchable Created Successfully](assets/launchable-creation-guide/images/image6.png)
+
 ## Using Your Launchable
 
 1. Click **View Live Deploy Page**. A preview of the Notebook is generated and is loaded. Here the user can read through the notebook but cannot execute code within the cells.
 
+   ![View Live Deploy Page](assets/launchable-creation-guide/images/image2.png)
+
 2. Click **Deploy Launchable**.
+
+   ![Deploy Launchable](assets/launchable-creation-guide/images/image16.png)
 
 3. Click **Go to Instance Page**. Here you can monitor status and view logs. The instance will start first then the configuration will spin up.
 
+   ![Go to Instance Page](assets/launchable-creation-guide/images/image3.png)
+
    **Expect 5-10+ minutes for most Launchable instances, especially if building containers—plan for this in UX.**
 
+   ![Instance Status](assets/launchable-creation-guide/images/image14.png)
+
 4. Click **Open Notebook** once your instance is configured.
+
+   ![Open Notebook](assets/launchable-creation-guide/images/image8.png)
 
 ## Please Test Thoroughly!
 
 Run all your cells in order before sharing your notebook, and make sure there are no errors! Document (1 page): what worked, blockers (e.g., drivers, storage, ports, Jupyter/SSH), and fixes.
+
+![Testing Form](assets/launchable-creation-guide/images/image4.png)
+
+![JupyterLab View](assets/launchable-creation-guide/images/image10.png)
