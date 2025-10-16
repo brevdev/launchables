@@ -173,4 +173,6 @@ The following screen is displayed when a launchable is successfully created. You
 
 ## Please Test Thoroughly!
 
-Run all your cells in order before sharing your notebook, and make sure there are no errors! Document (1 page): what worked, blockers (e.g., drivers, storage, ports, Jupyter/SSH), and fixes.
+Run all your cells in order before sharing your notebook, and make sure there are no errors!
+
+Document (1 page): what worked, blockers (e.g., drivers, storage, ports, Jupyter/SSH), and fixes.
