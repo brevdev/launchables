@@ -1,0 +1,47 @@
+{
+  "name": "Devin Outposts on Brev",
+  "description": "Connect Devin to a Brev NVIDIA GPU VM so Devin can run code, CUDA workloads, experiments, and tests on your own worker. Uses Devin's official direct runtime and connects to the Outpost name you select. An optional public GitHub repository can be pre-cloned.",
+  "viewAccess": "public",
+  "createWorkspaceRequest": {
+    "cloudCredId": "brev-gcp-test",
+    "instanceType": "g2-standard-8:nvidia-l4:1",
+    "storage": "256",
+    "firewallRules": []
+  },
+  "buildRequest": {
+    "parameters": [
+      {
+        "name": "DEVIN_WORKER_TOKEN",
+        "description": "Paste the cog_... worker token from the Devin API service user whose role includes Use outpost machine. Do not paste the value shown when creating the Outpost.",
+        "required": true
+      },
+      {
+        "name": "DEVIN_OUTPOST_NAME",
+        "description": "Enter the Outpost name exactly as shown under Devin Settings > Environment > Outposts, for example test or brev-gpu. This is a name, not a token or env ID.",
+        "required": true
+      },
+      {
+        "name": "DEVIN_API_URL",
+        "description": "For NVIDIA beta use https://nvidia.beta.devinenterprise.com/api. Leave blank for https://api.devin.ai.",
+        "required": false
+      },
+      {
+        "name": "REPO_URL",
+        "description": "Optional public GitHub HTTPS repository to pre-clone. Leave blank for an empty workspace.",
+        "required": false
+      }
+    ],
+    "vmBuild": {
+      "forceJupyterInstall": false,
+      "lifeCycleScriptAttr": {
+        "name": "devin-outposts-bootstrap.sh",
+        "script": ""
+      },
+      "k8s": {
+        "isDisabled": true,
+        "isDashboardEnabled": false
+      }
+    },
+    "ports": []
+  }
+}
