@@ -4,8 +4,8 @@ This Launchable provisions a Brev NVIDIA GPU VM and runs a small single-machine 
 
 ## Test inputs
 
-- `DEVIN_WORKER_TOKEN` (required): the `cog_...` worker token copied when provisioning a Devin API service user whose role includes **Use outpost machine**. Do not use the value shown when creating the Outpost. Enter the worker token only in the masked Launchable field.
-- `DEVIN_OUTPOST_NAME` (required): the exact name shown under **Devin Settings > Environment > Outposts**, such as `test` or `brev-gpu`. The setup resolves and validates its internal ID before starting.
+- `DEVIN_WORKER_TOKEN` (required): the `cog_...` worker token copied when provisioning a Devin API service user whose role includes **Use outpost machine**. Enter the worker token only in the masked Launchable field.
+- `DEVIN_OUTPOST_NAME` (required): the exact name shown under **Devin Settings > Environment > Outposts**. This is a name, not a token or env ID. The setup resolves and validates its internal ID before starting.
 - `DEVIN_API_URL` (optional): use `https://nvidia.beta.devinenterprise.com/api` for the NVIDIA beta organization. If blank, the setup uses `https://api.devin.ai`.
 - `REPO_URL` (optional): a public GitHub HTTPS repository. If blank, Devin starts with an empty workspace. Private repositories and branch selection are intentionally not part of v1.
 

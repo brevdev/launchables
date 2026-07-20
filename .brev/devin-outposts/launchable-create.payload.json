@@ -12,12 +12,12 @@
     "parameters": [
       {
         "name": "DEVIN_WORKER_TOKEN",
-        "description": "Paste the cog_... worker token from the Devin API service user whose role includes Use outpost machine. Do not paste the value shown when creating the Outpost.",
+        "description": "Paste the cog_... worker token from the Devin API service user whose role includes Use outpost machine.",
         "required": true
       },
       {
         "name": "DEVIN_OUTPOST_NAME",
-        "description": "Enter the Outpost name exactly as shown under Devin Settings > Environment > Outposts, for example test or brev-gpu. This is a name, not a token or env ID.",
+        "description": "Enter the Outpost name exactly as shown under Devin Settings > Environment > Outposts. This is a name, not a token or env ID.",
         "required": true
       },
       {
