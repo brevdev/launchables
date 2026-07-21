@@ -21,11 +21,6 @@
         "required": true
       },
       {
-        "name": "DEVIN_API_URL",
-        "description": "For NVIDIA beta use https://nvidia.beta.devinenterprise.com/api. Leave blank for https://api.devin.ai.",
-        "required": false
-      },
-      {
         "name": "REPO_URL",
         "description": "Optional public GitHub HTTPS repository to pre-clone. Leave blank for an empty workspace.",
         "required": false

@@ -6,7 +6,6 @@ This Launchable provisions a Brev NVIDIA GPU VM and runs a small single-machine 
 
 - `DEVIN_WORKER_TOKEN` (required): the `cog_...` worker token copied when provisioning a Devin API service user whose role includes **Use outpost machine**. Enter the worker token only in the masked Launchable field.
 - `DEVIN_OUTPOST_NAME` (required): the exact name shown under **Devin Settings > Environment > Outposts**. This is a name, not a token or env ID. The setup resolves and validates its internal ID before starting.
-- `DEVIN_API_URL` (optional): use `https://nvidia.beta.devinenterprise.com/api` for the NVIDIA beta organization. If blank, the setup uses `https://api.devin.ai`.
 - `REPO_URL` (optional): a public GitHub HTTPS repository. If blank, Devin starts with an empty workspace. Private repositories and branch selection are intentionally not part of v1.
 
 The Launchable form intentionally asks for the visible Outpost name. The setup script resolves that name to Devin's internal `outpost_env-...` identifier automatically.
@@ -57,7 +56,7 @@ To publish an installer update:
 1. Fails clearly unless an NVIDIA GPU and driver are available.
 2. Installs only base OS tools needed for the coordinator; it does not install the Devin CLI.
 3. Optionally clones a public GitHub repository under `/home/ubuntu/devin-workspace/repos`, without initializing submodules or executing repository content.
-4. Lists the account's Outposts and requires an exact name match. A worker-token or API URL mismatch fails before the service starts.
+4. Lists the account's Outposts through Devin's public API and requires an exact name match. An invalid worker token fails before the service starts.
 5. Stores the machine-scoped token in `/etc/devin-outposts/worker.env` as root-only mode `0600` and keeps it out of the session runtime's environment.
 6. Downloads the latest direct runtime as a preflight check, verifies its published SHA-256 checksum, and caches it under `/var/lib/devin-outposts-launchable/binaries`.
 7. Starts `devin-outposts-worker.service`. The root coordinator polls for pending Linux sessions, downloads the session-pinned runtime before claiming, runs `devin-remote serve` as `ubuntu` with a clean environment, and releases the claim when the session ends or fails.

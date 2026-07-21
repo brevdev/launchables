@@ -8,14 +8,13 @@
 - [ ] The rendered readable lifecycle bootstrap is non-empty and below 16 KiB.
 - [ ] The bootstrap pins a full Git commit and SHA-256 digest, and the raw GitHub installer matches both the committed file and digest.
 - [ ] The payload has `viewAccess=public`, `ports=[]`, `firewallRules=[]`, VM mode, and Jupyter disabled.
-- [ ] Only the clearly named worker token and Outpost name are required; API URL and public repository are optional.
+- [ ] Only the clearly named worker token and Outpost name are required; the public repository is optional.
 - [ ] The setup and rendered lifecycle contain no Devin CLI download or `devin worker start` command.
 - [ ] No token is present in tracked files, lifecycle logs, command arguments, or the readiness record.
 
 ## First deployment
 
-- [ ] Use a newly generated machine-scoped worker token and exact Outpost name from the NVIDIA beta Devin account.
-- [ ] Set `DEVIN_API_URL=https://nvidia.beta.devinenterprise.com/api`.
+- [ ] Use a newly generated machine-scoped worker token and exact Outpost name from the Devin account.
 - [ ] Leave `REPO_URL` blank.
 - [ ] Confirm the deploy page shows the L4 default and allows compute editing.
 - [ ] Confirm the VM becomes ready without a Secure Link or Jupyter CTA.
@@ -39,7 +38,7 @@
 
 - [ ] Missing worker token fails before the worker is installed.
 - [ ] Missing Outpost name fails before the worker is installed.
-- [ ] A worker-token/API mismatch fails with only an HTTP status, not response contents or token text.
+- [ ] An invalid worker token fails with only an HTTP status, not response contents or token text.
 - [ ] An unknown Outpost name fails before service creation and lists only the available non-secret Outpost names.
 - [ ] A `cog_...` value is rejected as an Outpost rather than being accepted by an empty queue response.
 - [ ] A bad runtime checksum is never executed or claimed; an HTTP 409 claim race is treated as non-fatal.
